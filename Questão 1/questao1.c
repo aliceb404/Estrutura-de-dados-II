@@ -1,7 +1,5 @@
 /*
- * ESTRUTURAS DE DADOS - UFPA / ICEN / Faculdade de Computacao
- * QUESTAO 1 - Pilha sequencial (LIFO) de 10 espacos para paginas web visitadas
- *  
+QUESTAO 1 - Pilha sequencial (LIFO) de 10 espacos para paginas web visitadas
  */
 
 #include <stdio.h>
@@ -16,9 +14,8 @@ typedef struct {
 } PageData;
 
 /* ------------------------------------------------------------------ */
-/* a) Struct que abriga a pilha, definida como tipo Stack.             */
-/*    - dados: array que implementa a LIFO (pilha sequencial)          */
-/*    - topo : indice do ultimo elemento ocupado (-1 => pilha vazia)   */
+/* a) Crie uma struct para abrigar a pilha e defina-a como tipo Stack. Essa struct deve
+conter o array correspondente à LIFO e um int para guardar o topo da pilha.
 /* ------------------------------------------------------------------ */
 typedef struct {
     PageData dados[MAX];
@@ -33,7 +30,7 @@ typedef struct {
 #define ERRO_ENDERECO_GRANDE -4   /* string nao cabe em adress[30]   */
 
 /* ------------------------------------------------------------------ */
-/* b) inicializarPilha: aloca memoria dinamicamente e zera o topo.     */
+/* b) Escreva a função inicializarPilha que aloca memória para a pilha.*/
 /* ------------------------------------------------------------------ */
 Stack* inicializarPilha() {
     Stack* pilha = (Stack*) malloc(sizeof(Stack));
@@ -44,8 +41,9 @@ Stack* inicializarPilha() {
 }
 
 /* ------------------------------------------------------------------ */
-/* c) push: insere um elemento no topo da pilha.                       */
-/*    Retorna OK ou um codigo de erro.                                 */
+/* c) Escreva a função push para adicionar um elemento à pilha. Se necessário, utilize a
+função strcpy(char* destino, const char* origem), da biblioteca padrão, para copiar
+strings.                                */
 /* ------------------------------------------------------------------ */
 int push(Stack* pilha, char* adress, int connectionType) {
     if (pilha == NULL || adress == NULL) {
@@ -71,9 +69,10 @@ int push(Stack* pilha, char* adress, int connectionType) {
 }
 
 /* ------------------------------------------------------------------ */
-/* d) pop: remove e mostra o ultimo endereco da pilha.                 */
+/* d)Escreva a função pop para remover e mostrar o último endereço da pilha.*/
 /*    Retorna OK ou um codigo de erro.                                 */
 /* ------------------------------------------------------------------ */
+
 int pop(Stack* pilha) {
     if (pilha == NULL) {
         return ERRO_PILHA_NULA;
@@ -119,7 +118,7 @@ void liberarPilha(Stack* pilha) {
 }
 
 /* ------------------------------------------------------------------ */
-/* main conforme o enunciado                                           */
+/* FUNÇÃO MAIN */
 /* ------------------------------------------------------------------ */
 int main() {
     int errorCode;

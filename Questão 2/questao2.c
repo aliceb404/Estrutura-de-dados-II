@@ -1,22 +1,5 @@
 /*
- * ESTRUTURAS DE DADOS - UFPA / ICEN / Faculdade de Computacao
- * QUESTAO 2 - Permutacoes de 1,2,3,4 obtidas como saida de uma pilha
- *
- * Os inteiros 1,2,3,4 chegam NESTA ORDEM. A qualquer momento podemos:
- *      PUSH  -> empilhar o proximo inteiro da entrada
- *      POP   -> desempilhar o topo (o elemento vai para a saida)
- * O programa gera as 24 permutacoes e, para cada uma, tenta construi-la
- * simulando a pilha. Se conseguir, mostra a sequencia de operacoes;
- * se nao, mostra o motivo.
- *
- * Estrategia de simulacao (e correta, pois nao ha escolha alternativa):
- *   Para cada valor v que deve SAIR:
- *     1) se v ainda nao entrou, empilha todos os inteiros da entrada
- *        ate empilhar v;
- *     2) o topo precisa ser v. Se nao for, v esta ENTERRADO sob outro
- *        elemento que ainda precisa sair antes (violacao do LIFO).
- *
- * Compilar: gcc -Wall -Wextra -o questao2 questao2.c
+ QUESTAO 2 - Permutacoes de 1,2,3,4 obtidas como saida de uma pilha
  */
 
 #include <stdio.h>
@@ -24,8 +7,8 @@
 
 #define N 4
 
-/* Simula a pilha para obter a permutacao perm[0..n-1].
- * Retorna 1 se possivel (ops recebe a sequencia de operacoes);
+/* Aqui simula a pilha para obter a permutacao perm[0..n-1].
+ * Depois retorna 1 se possivel (ops recebe a sequencia de operacoes);
  * retorna 0 se impossivel (alvo/topo explicam a falha). */
 int simula(int perm[], int n, char *ops, int *falha_alvo, int *falha_topo) {
     int pilha[N];
@@ -47,7 +30,7 @@ int simula(int perm[], int n, char *ops, int *falha_alvo, int *falha_topo) {
             proximo++;
         }
 
-        /* O topo precisa ser exatamente o alvo */
+        /* O topo precisa ser igual ao alvo */
         if (pilha[topo] == alvo) {
             topo--;
             sprintf(tmp, "Desempilha %d; ", alvo);
@@ -81,7 +64,7 @@ void processa(int perm[]) {
     }
 }
 
-/* Gera todas as permutacoes por backtracking (ordem lexicografica). */
+/* Gera todas as permutacoes por backtracking. */
 void gera(int perm[], int usado[], int pos) {
     int v;
     if (pos == N) {

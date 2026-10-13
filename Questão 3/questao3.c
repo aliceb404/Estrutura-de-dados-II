@@ -1,15 +1,6 @@
 /*
- * ESTRUTURAS DE DADOS - UFPA / ICEN / Faculdade de Computacao
- * QUESTAO 3 - Arvore Binaria de Busca (ABB)
- *
- * Operacoes implementadas:
- *   1) abb_insere        2) abb_busca (recursiva)   3) abb_remove (3 casos,
- *   predecessor)         4) abb_altura (raiz sozinha = 0)
- *   5) abb_folhas        6) abb_kesimo_menor (sem vetor/estrutura auxiliar)
- *   7) eh_abb            8) percurso em ordem
- *
- * Compilar: gcc -Wall -Wextra -o questao3 questao3.c
- */
+QUESTAO 3 - Arvore Binaria de Busca (ABB)
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,7 +32,7 @@ Arv* abb_cria_no(int valor) {
 
 /* ------------------------------------------------------------------ */
 /* 1. Insercao: menores a esquerda, maiores a direita.                 */
-/*    Retorna a (possivelmente nova) raiz. Valores repetidos ignorados. */
+/*    Retorna a (possivelmente nova) raiz. Valores repetidos sãoignorados. */
 /* ------------------------------------------------------------------ */
 Arv* abb_insere(Arv *raiz, int valor) {
     if (raiz == NULL) {

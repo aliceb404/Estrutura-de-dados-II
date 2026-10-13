@@ -1,17 +1,5 @@
 /*
- * ESTRUTURAS DE DADOS - UFPA / ICEN / Faculdade de Computacao
- * QUESTAO 4 - Arvore AVL (insercao, remocao e rotacoes LL, RR, LR, RL)
- *
- * Convencoes:
- *   - altura de arvore vazia = -1 e de folha = 0 (mesma convencao da Q3)
- *   - fator de balanceamento FB = altura(esq) - altura(dir)
- *     FB > +1 => pesada a esquerda (casos LL / LR)
- *     FB < -1 => pesada a direita  (casos RR / RL)
- *   - na remocao de no com dois filhos usa-se o PREDECESSOR (maior da
- *     subarvore esquerda), igual a Q3. Para usar o SUCESSOR, compile com
- *     -DUSAR_SUCESSOR
- *
- * Compilar: gcc -Wall -Wextra -o questao4 questao4.c
+ QUESTAO 4 - Arvore AVL (insercao, remocao e rotacoes LL, RR, LR, RL)
  */
 
 #include <stdio.h>
